@@ -9,7 +9,7 @@
   {{-- load css file --}}
   <style>
     .d-flex {
-    width: 1000px; /* or any specific width you prefer */
+    width: 500px; /* or any specific width you prefer */
     }
 
   </style>

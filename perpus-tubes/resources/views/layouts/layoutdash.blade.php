@@ -9,14 +9,21 @@
   {{-- load css file --}}
   <style>
     .d-flex {
-    width: 1000px; /* or any specific width you prefer */
+    width: 5000px; /* or any specific width you prefer */
     }
-
+    .custom-container {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .custom-navbar {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
   </style>
 </head>
 
 <body>
-  @include('layouts.navbarhome')
+  @include('layouts.navbardash')
 
   @yield('content')
 

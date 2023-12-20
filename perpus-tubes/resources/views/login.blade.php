@@ -3,14 +3,14 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow">
+        <div class="col-md-5">
+            <div class="card ">
                 <div class="card-header ">
                     <div class="card-header text-bg-primary mb-3">
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="/" class="btn btn-primary"><</a>
-                        <div class="d-grid gap-2 col-4 mx-auto">
-                            <h5 class="text-white mb-0">Admin Log In</h5>
+                        <div class="d-grid gap-2 col-3 mx-auto">
+                            <h5 class="text-white mb-0">Login</h5>
                         </div>
                     </div>
                 </div>
