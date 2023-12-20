@@ -5,7 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card shadow">
-                <div class="card-header text-center bg-primary text-white">Admin Log In</div>
+                <div class="card-header ">
+                    <div class="card-header text-bg-primary mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="/" class="btn btn-primary"><</a>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <h5 class="text-white mb-0">Admin Log In</h5>
+                        </div>
+                    </div>
+                </div>
+                
 
                 <div class="card-body">
                     <form method="POST" action="">
@@ -48,13 +57,7 @@
                     </form>
                 </div>
 
-                <div class="card-footer text-right">
-                    @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                            {{ __('Forgot Your Password?') }}
-                        </a>
-                    @endif
-                </div>
+                
             </div>
         </div>
     </div>
