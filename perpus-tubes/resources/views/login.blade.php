@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card shadow">
-                <div class="card-header text-center bg-primary text-white">{{ __('Login') }}</div>
+                <div class="card-header text-center bg-primary text-white">{{ __('Admin Log in_array') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="">
@@ -42,7 +42,7 @@
                         <!-- Submit Button -->
                         <div class="form-group mb-0">
                             <button type="submit" class="btn btn-primary btn-block">
-                                {{ __('Login') }}
+                                {{ __('Log in') }}
                             </button>
                         </div>
                     </form>
