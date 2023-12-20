@@ -20,17 +20,17 @@
           </form>
         </li>
       </ul>
-      
+
       <!-- Center-aligned search bar -->
       <ul class="navbar-nav mx-auto">
       </ul>
-      
-      
-      
+
+
+
       <!-- Right-aligned items -->
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('login') }}">Login</a>
+          <a class="nav-link" href="/login">Login</a>
         </li>
       </ul>
     </div>
