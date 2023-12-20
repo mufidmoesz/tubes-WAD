@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card shadow">
-                <div class="card-header text-center bg-primary text-white">{{ __('Admin Log in_array') }}</div>
+                <div class="card-header text-center bg-primary text-white">Admin Log In</div>
 
                 <div class="card-body">
                     <form method="POST" action="">
@@ -13,7 +13,7 @@
 
                         <!-- Email Address -->
                         <div class="form-group">
-                            <label for="email">{{ __('Email Address') }}</label>
+                            <label for="username">{{ __('Email Address') }}</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
