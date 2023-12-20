@@ -1,3 +1,6 @@
+@extends('admin.layoutdash')
+
+@section('content')
 <!doctype html>
 <html lang="en">
 
@@ -24,3 +27,4 @@
 </body>
 
 </html>
+@endsection
