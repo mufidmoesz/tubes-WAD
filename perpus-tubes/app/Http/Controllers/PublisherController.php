@@ -8,6 +8,12 @@ use App\Models\Publisher;
 class PublisherController extends Controller
 {
     //
+    protected $model;
+    public function __construct(Publisher $publisher)
+    {
+        $this->model = $publisher;
+    }
+
     public function index()
     {
         $publishers = Publisher::all();
@@ -38,6 +44,12 @@ class PublisherController extends Controller
         ]);
 
         return redirect()->route('admin.publisher.index')->with('success', 'Publisher berhasil ditambahkan!');
+    }
+
+    public function show($id)
+    {
+        $publisher = Publisher::find($id)->with('books')->findOrFail($id);
+        return view('admin.publisher.show', compact('publisher'));
     }
 
     public function edit($id)

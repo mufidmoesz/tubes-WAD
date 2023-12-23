@@ -8,6 +8,13 @@ use App\Models\Author;
 class AuthorController extends Controller
 {
     //
+    protected $model;
+
+    public function __construct(Author $author)
+    {
+        $this->model = $author;
+    }
+
     public function index()
     {
         $authors = Author::all();
@@ -77,8 +84,15 @@ class AuthorController extends Controller
     public function destroy($id)
     {
         $author = Author::find($id);
+        $author->books()->detach();
         $author->delete();
 
         return redirect()->route('admin.author.index')->with('success', 'Author berhasil dihapus!');
+    }
+
+    public function show($id)
+    {
+        $author = Author::find($id)->with('books')->findOrFail($id);
+        return view('admin.author.show', compact('author'));
     }
 }

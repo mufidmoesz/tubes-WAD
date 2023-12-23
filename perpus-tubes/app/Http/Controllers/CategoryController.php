@@ -8,6 +8,12 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     //
+    protected $model;
+    public function __construct(Category $category)
+    {
+        $this->model = $category;
+    }
+
     public function index() {
         $categories = Category::all();
         return view('admin.category.index', compact('categories'));
@@ -49,8 +55,14 @@ class CategoryController extends Controller
 
     public function destroy($id) {
         $category = Category::find($id);
+        $category->books()->detach();
         $category->delete();
 
         return redirect()->route('admin.category.index')->with('success', 'Category berhasil dihapus!');
+    }
+
+    public function show($id) {
+        $category = Category::find($id)->with('books')->findOrFail($id);
+        return view('admin.category.show', compact('category'));
     }
 }

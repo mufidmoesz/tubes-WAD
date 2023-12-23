@@ -9,11 +9,13 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function books() {
-        return $this->hasMany(Book::class, 'category_id', 'category_id');
-    }
+    protected $table = 'categories';
 
     protected $fillable = [
         'category_name'
     ];
+
+    public function books() {
+        return $this->belongsToMany(Book::class, 'book_categories')->using(BookCategory::class);
+    }
 }
