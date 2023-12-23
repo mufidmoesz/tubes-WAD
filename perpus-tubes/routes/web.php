@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\PublisherController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +35,18 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/author/{id}/edit', [AuthorController::class, 'edit'])->name('admin.author.edit');
     Route::put('/admin/author/{id}', [AuthorController::class, 'update'])->name('admin.author.update');
     Route::delete('/admin/author/{id}', [AuthorController::class, 'destroy'])->name('admin.author.destroy');
+    //crud publisher
+    Route::get('/admin/publisher', [PublisherController::class, 'index'])->name('admin.publisher.index');
+    Route::get('/admin/publisher/create', [PublisherController::class, 'create'])->name('admin.publisher.create');
+    Route::post('/admin/publisher', [PublisherController::class, 'store'])->name('admin.publisher.store');
+    Route::get('/admin/publisher/{id}/edit', [PublisherController::class, 'edit'])->name('admin.publisher.edit');
+    Route::put('/admin/publisher/{id}', [PublisherController::class, 'update'])->name('admin.publisher.update');
+    Route::delete('/admin/publisher/{id}', [PublisherController::class, 'destroy'])->name('admin.publisher.destroy');
+    //crud category
+    Route::get('/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
+    Route::get('/admin/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
+    Route::post('/admin/category', [CategoryController::class, 'store'])->name('admin.category.store');
+    Route::get('/admin/category/{id}/edit', [CategoryController::class, 'edit'])->name('admin.category.edit');
+    Route::put('/admin/category/{id}', [CategoryController::class, 'update'])->name('admin.category.update');
+    Route::delete('/admin/category/{id}', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
 });
