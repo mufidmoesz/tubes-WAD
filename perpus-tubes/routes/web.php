@@ -45,14 +45,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/publisher/{id}/edit', [PublisherController::class, 'edit'])->name('admin.publisher.edit');
     Route::put('/admin/publisher/{id}', [PublisherController::class, 'update'])->name('admin.publisher.update');
     Route::delete('/admin/publisher/{id}', [PublisherController::class, 'destroy'])->name('admin.publisher.destroy');
-    //crud category
+    // //crud category
     Route::get('/admin/category', [CategoryController::class, 'index'])->name('admin.category.index');
     Route::get('/admin/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
     Route::post('/admin/category', [CategoryController::class, 'store'])->name('admin.category.store');
     Route::get('/admin/category/{id}/edit', [CategoryController::class, 'edit'])->name('admin.category.edit');
     Route::put('/admin/category/{id}', [CategoryController::class, 'update'])->name('admin.category.update');
     Route::delete('/admin/category/{id}', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
-    //Spesific Method Category
+    // Spesific Method Category
     Route::get('/admin/category/{id}/show', [CategoryController::class, 'show'])->name('admin.category.show');
     //crud books
     Route::get('/admin/book', [BookController::class, 'index'])->name('admin.book.index');
