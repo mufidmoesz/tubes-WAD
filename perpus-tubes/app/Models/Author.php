@@ -17,8 +17,7 @@ class Author extends Model
     protected $fillable = [
         'name',
         'birth_date',
-        'about_author',
-        'photo'
+        'about_author'
     ];
 
     protected $casts = [

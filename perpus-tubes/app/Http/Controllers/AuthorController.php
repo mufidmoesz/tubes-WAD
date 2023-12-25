@@ -31,19 +31,13 @@ class AuthorController extends Controller
         $request->validate([
             'name' => 'required|unique:authors',
             'birth_date' => 'required|date',
-            'about_author' => 'required',
-            'photo' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+            'about_author' => 'required'
         ]);
-
-        $photo = $request->file('photo');
-        $photoName = time() . '.' . $photo->extension();
-        $photo->move(public_path('img'), $photoName);
 
         Author::create([
             'name' => $request->name,
             'birth_date' => $request->birth_date,
-            'about_author' => $request->about_author,
-            'photo' => $photoName
+            'about_author' => $request->about_author
         ]);
 
         return redirect()->route('admin.author.index')->with('success', 'Author berhasil ditambahkan!');
@@ -60,18 +54,10 @@ class AuthorController extends Controller
         $request->validate([
             'name' => 'required|unique:authors,name,' . $id . ',author_id',
             'birth_date' => 'required|date',
-            'about_author' => 'required',
-            'photo' => 'image|mimes:jpeg,png,jpg|max:2048'
+            'about_author' => 'required'
         ]);
 
         $author = Author::find($id);
-
-        if ($request->file('photo')) {
-            $photo = $request->file('photo');
-            $photoName = time() . '.' . $photo->extension();
-            $photo->move(public_path('img'), $photoName);
-            $author->photo = $photoName;
-        }
 
         $author->name = $request->name;
         $author->birth_date = $request->birth_date;

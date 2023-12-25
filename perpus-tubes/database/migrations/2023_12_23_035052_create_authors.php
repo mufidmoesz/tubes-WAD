@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->date('birth_date');
             $table->longText('about_author');
-            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }
