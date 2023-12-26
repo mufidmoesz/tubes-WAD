@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Models\Author;
+use App\Models\Category;
+use App\Models\BookAuthor;
+use App\Models\BookCategory;
+use App\Models\Publisher;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
@@ -11,13 +17,25 @@ class BookController extends Controller
 
     public function index()
     {
-        $books = Book::all()->with('authors', 'publishers');
-        return view('admin.book.index', compact('books'));
+        $books = Book::all();
+
+        foreach($books as $book) {
+            $bookIds[] = $book->book_id;
+
+        }
+        $authorIds = BookAuthor::whereIn('book_id', $bookIds)->get();
+        $authors = Author::all();
+
+        $categoryIds = BookCategory::whereIn('book_id', $bookIds)->get();
+        $categories = Category::all();
+        return view('admin.book.index', compact(['books', 'authorIds', 'authors', 'categoryIds', 'categories']));
     }
 
     public function create()
     {
-        return view('admin.book.create');
+        $authors = Author::all();
+        $categories = Category::all();
+        return view('admin.book.create', compact('authors', 'categories'));
     }
 
     public function store(Request $request)
@@ -27,7 +45,7 @@ class BookController extends Controller
             'year_released' => 'required',
             'description' => 'required',
             'cover' => 'image|mimes:jpeg,png,jpg|max:2048',
-            'isbn' => 'required|unique',
+            'isbn' => 'required|unique:books',
             'publisher_id' => 'exists:publishers,publisher_id',
             'authors' => 'array',
             'authors.*' => 'exists:authors,author_id',
@@ -39,7 +57,7 @@ class BookController extends Controller
         $coverName = time() . '.' . $cover->extension();
         $cover->move(public_path('img'), $coverName);
 
-        Book::create([
+        $book = Book::create([
             'title' => $request->title,
             'year_released' => $request->year_released,
             'description' => $request->description,
@@ -50,10 +68,22 @@ class BookController extends Controller
 
         $authors = $request->get('authors');
         $categories = $request->get('categories');
-        $book = Book::latest()->first();
-        $book->authors()->attach($authors);
-        $book->categories()->attach($categories);
-        return redirect('admin.book.index')->with('success', 'Buku berhasil ditambahkan!');
+
+        foreach($authors as $author_id) {
+            DB::table('book_authors')->insert([
+                'book_id' => $book->id,
+                'author_id' => $author_id
+            ]);
+        }
+
+        foreach($categories as $category_id) {
+            DB::table('book_categories')->insert([
+                'book_id' => $book->id,
+                'category_id' => $category_id
+            ]);
+        }
+        //send book_id which just created to BookAuthorController
+        return redirect()->route('admin.book.index')->with('success', 'Buku berhasil ditambahkan!');
     }
 
     public function edit($id)
@@ -104,7 +134,16 @@ class BookController extends Controller
 
     public function show($id)
     {
-        $book = Book::find($id)->with('authors', 'publishers')->findOrFail($id);
-        return view('admin.book.show', compact('book'));
+        $book = Book::findOrFail($id);
+
+        $authorId = BookAuthor::where('book_id', $book->book_id)->pluck('author_id');
+        $authorName = Author::whereIn('author_id', $authorId)->pluck('name');
+
+        $categoryId = BookCategory::where('book_id', $book->book_id)->pluck('category_id');
+        $categoryName = Category::whereIn('category_id', $categoryId)->pluck('category_name');
+
+        $publisherName = Publisher::where('publisher_id', $book->publisher_id)->value('publisher_name');
+
+        return view('admin.book.show', compact('book', 'authorName', 'categoryName', 'publisherName'));
     }
 }
