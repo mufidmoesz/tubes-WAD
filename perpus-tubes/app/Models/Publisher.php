@@ -10,6 +10,8 @@ class Publisher extends Model
     use HasFactory;
 
     protected $table = 'publishers';
+
+    protected $primaryKey = 'publisher_id';
     public function books() {
         return $this->hasMany(Book::class, 'publisher_id', 'publisher_id');
     }

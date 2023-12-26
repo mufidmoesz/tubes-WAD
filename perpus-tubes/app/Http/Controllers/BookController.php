@@ -10,7 +10,7 @@ use App\Models\BookAuthor;
 use App\Models\BookCategory;
 use App\Models\Publisher;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Str; // Import the Str class
 class BookController extends Controller
 {
     //
@@ -35,29 +35,32 @@ class BookController extends Controller
     {
         $authors = Author::all();
         $categories = Category::all();
-        return view('admin.book.create', compact('authors', 'categories'));
+        $publishers = Publisher::all();
+        return view('admin.book.create', compact('authors', 'categories', 'publishers'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'title' => 'required',
-            'year_released' => 'required',
             'description' => 'required',
-            'cover' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'year_released' => 'required',
+            'cover' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'authors' => 'required|array',
+            'authors.*' => 'exists:authors,author_id', // Validation for a multi-select field
+            'publisher_id' => 'required|exists:publishers,publisher_id',
+            'categories' => 'required|array',
+            'categories.*' => 'exists:categories,category_id', // Validation for a multi-select field
             'isbn' => 'required|unique:books',
-            'publisher_id' => 'exists:publishers,publisher_id',
-            'authors' => 'array',
-            'authors.*' => 'exists:authors,author_id',
-            'categories' => 'array',
-            'categories.*' => 'exists:categories,category_id'
         ]);
-
+        // dd($request);
         $cover = $request->file('cover');
-        $coverName = time() . '.' . $cover->extension();
+
+        $coverName = Str::uuid()->toString() . '.' . $cover->extension(); // Use the Str class to generate a unique cover name
+
         $cover->move(public_path('img'), $coverName);
 
-        $book = Book::create([
+        Book::create([
             'title' => $request->title,
             'year_released' => $request->year_released,
             'description' => $request->description,
@@ -66,22 +69,15 @@ class BookController extends Controller
             'publisher_id' => $request->publisher_id
         ]);
 
+        //save the author_id and category_id to their respective pivot table
+        $book_id = DB::getPdo()->lastInsertId(); //get the last inserted id from books table
         $authors = $request->get('authors');
         $categories = $request->get('categories');
+        $book = Book::find($book_id);
+        $book->author()->attach($authors);
+        $book->category()->attach($categories);
 
-        foreach($authors as $author_id) {
-            DB::table('book_authors')->insert([
-                'book_id' => $book->id,
-                'author_id' => $author_id
-            ]);
-        }
 
-        foreach($categories as $category_id) {
-            DB::table('book_categories')->insert([
-                'book_id' => $book->id,
-                'category_id' => $category_id
-            ]);
-        }
         //send book_id which just created to BookAuthorController
         return redirect()->route('admin.book.index')->with('success', 'Buku berhasil ditambahkan!');
     }
@@ -104,7 +100,6 @@ class BookController extends Controller
             'authors' => 'array',
             'authors.*' => 'exists:authors,author_id',
             'categories' => 'array',
-            'categories.*' => 'exists:categories,category_id'
         ]);
 
         $book = Book::find($id);

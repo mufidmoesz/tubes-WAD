@@ -26,10 +26,10 @@ class Book extends Model
     }
 
     public function author() {
-        return $this->belongsToMany(Author::class, 'book_authors')->using(BookAuthor::class);
+        return $this->belongsToMany(Author::class, 'book_authors', 'book_id', 'author_id')->using(BookAuthor::class);
     }
 
     public function category() {
-        return $this->belongsTo(Category::class, 'book_categories')->using(BookCategory::class);
+        return $this->belongsToMany(Category::class, 'book_categories', 'book_id', 'category_id')->using(BookCategory::class);
     }
 }

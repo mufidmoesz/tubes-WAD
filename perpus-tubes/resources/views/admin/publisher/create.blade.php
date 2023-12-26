@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h2>Add New Publisher</h2>
-    <form action="{{ route('publishers.store') }}" method="POST">
+    <form action="/admin/publisher" method="POST">
         @csrf
 
         <div class="form-group">
@@ -31,7 +31,7 @@
             <input type="text" class="form-control" id="publisher_website" name="publisher_website">
         </div>
 
-        <button type="submit" class="btn btn-primary">Add Publisher</button>
+        <button type="submit" class="btn btn-primary mt-3">Add Publisher</button>
     </form>
 </div>
 @endsection

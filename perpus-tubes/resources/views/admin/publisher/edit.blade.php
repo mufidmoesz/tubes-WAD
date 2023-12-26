@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h2>Edit Publisher</h2>
-    <form action="{{ route('publishers.update', $publisher->id) }}" method="POST">
+    <form action="/admin/publisher/{{ $publisher->publisher_id }}" method="POST">
         @csrf
         @method('PUT')
 

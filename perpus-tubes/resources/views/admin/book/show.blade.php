@@ -10,12 +10,10 @@
         object-fit: cover;
     }
 </style>
-<div class="container mt-4">
+<div class="container mt-4 shadow">
     <div class="row">
-        <div class="col-md-6">
-            <figure class="figure">
-                <img src="{{ $book->cover }}" class="figure-img img-fluid rounded" alt="...">
-            </figure>
+        <div class="col-md-6 mt-4 mb-4">
+            <img src="/img/{{ $book->cover }}" class="rounded mx-auto d-block" alt="..." height="500px" width="325px">
         </div>
         <div class="col-md-6">
             <h3 class="mt-4">{{ $book->title }}</h3>

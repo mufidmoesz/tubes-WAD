@@ -25,11 +25,11 @@
                     <td>{{ $publisher->publisher_email }}</td>
                     <td>{{ $publisher->publisher_website }}</td>
                     <td>
-                        <a href="{{ route('publishers.edit', $publisher->id) }}" class="btn btn-warning">Update</a>
-                        <form action="{{ route('publishers.destroy', $publisher->id) }}" method="POST" style="display:inline;">
+                        <a href="/admin/publisher/{{$publisher->publisher_id}}/edit" class="btn btn-warning">Update</a>
+                        <form action="/admin/publisher/{{$publisher->publisher_id}}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                            <button type="submit" class="btn btn-danger mt-3" onclick="return confirm('Are you sure?')">Delete</button>
                         </form>
                     </td>
                 </tr>

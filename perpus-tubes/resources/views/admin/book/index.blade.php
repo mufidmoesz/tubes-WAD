@@ -19,12 +19,13 @@
         object-fit: cover;
     }
 </style>
-<div class="container">
+<div class="container mt-4">
+    <h2>Books</h2>
     <div class="row">
     @foreach($books as $book)
     <div class="col-md-3 mt-4">
         <div class="card mt-3" style="width: 15rem;">
-            <img src="{{ $book->cover }}" class="card-img-top" alt="...">
+            <img src="/img/{{ $book->cover }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ $book->title }}</h5>
             </div>

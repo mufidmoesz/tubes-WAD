@@ -52,14 +52,18 @@ class AuthorController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|unique:authors,name,' . $id . ',author_id',
+            'author_name' => 'required',
             'birth_date' => 'required|date',
             'about_author' => 'required'
         ]);
-
         $author = Author::find($id);
+        // dd($author);
 
-        $author->name = $request->name;
+        if (!$author) {
+            return redirect()->route('admin.author.index')->with('error', 'Author not found.');
+        }
+
+        $author->name = $request->author_name;
         $author->birth_date = $request->birth_date;
         $author->about_author = $request->about_author;
         $author->save();

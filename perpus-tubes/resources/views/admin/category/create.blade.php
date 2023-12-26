@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h2>Add New Category</h2>
-    <form action="{{ route('categories.store') }}" method="POST">
+    <form action="/admin/category" method="POST">
         @csrf
 
         <div class="form-group">
@@ -11,7 +11,7 @@
             <input type="text" class="form-control" id="category_name" name="category_name" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Add Category</button>
+        <button type="submit" class="btn btn-primary mt-3">Add Category</button>
     </form>
 </div>
 @endsection

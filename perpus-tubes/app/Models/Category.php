@@ -11,11 +11,13 @@ class Category extends Model
 
     protected $table = 'categories';
 
+    protected $primaryKey = 'category_id';
+
     protected $fillable = [
         'category_name'
     ];
 
     public function books() {
-        return $this->belongsToMany(Book::class, 'book_categories')->using(BookCategory::class);
+        return $this->belongsToMany(Book::class, 'book_categories', 'category_id', 'book_id')->using(BookCategory::class);
     }
 }

@@ -10,8 +10,10 @@ class Author extends Model
     use HasFactory;
 
     protected $table = 'authors';
+
+    protected $primaryKey = 'author_id';
     public function books() {
-        return $this->belongsToMany(Book::class, 'book_authors')->using(BookAuthor::class);
+        return $this->belongsToMany(Book::class, 'book_authors', 'author_id', 'book_id')->using(BookAuthor::class);
     }
 
     protected $fillable = [

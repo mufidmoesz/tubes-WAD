@@ -12,13 +12,17 @@
             </tr>
         </thead>
         <tbody>
+            @php
+                $no = 1;
+            @endphp
             @foreach ($categories as $category)
                 <tr>
-                    <td>{{ $category->id }}</td>
+                    <td>{{$no++}}</td>
                     <td>{{ $category->category_name }}</td>
                     <td>
-                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-warning btn-sm">Update</a>
-                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display:inline;">
+                        <a href="" class="btn btn-warning btn-sm">Update</a>
+                        {{-- <a href="/admin/category/{{ $category->category_id }}" class="btn btn-danger btn-sm" onclick="alert('Are you sure?')">Delete</a> --}}
+                        <form action="/admin/category/{{ $category->category_id }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
@@ -31,7 +35,7 @@
 
     <!-- Add New Category Button -->
     <div style="text-align: left; margin-top: 10px;">
-        <a href="{{ route('categories.create') }}" class="btn btn-success">Add New Category</a>
+        <a href="" class="btn btn-success">Add New Category</a>
     </div>
 </div>
 @endsection
