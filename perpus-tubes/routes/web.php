@@ -24,6 +24,8 @@ Route::get('/', [BookController::class, 'homeIndex'])->name('home');
 Route::get('/login', [loginController::class, 'index'])->name('login');
 Route::post('/login', [loginController::class, 'login']);
 Route::get('/logout', [loginController::class, 'logout'])->name('logout');
+
+Route::get('/book/{id}/show', [BookController::class, 'homeshow'])->name('show');
 // Route Group untuk mengamankan route yang perlu diproteksi dengan login
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [BookController::class, 'dashboardIndex'])->name('admin.dashboard');

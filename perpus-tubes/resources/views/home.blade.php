@@ -61,7 +61,7 @@
                 </li>
             </ul>
             <div class="card-body2">
-                <a href="/admin/book/{{ $book->book_id }}/show" class="btn btn-primary">Lihat Buku</a>
+                <a href="/book/{{ $book->book_id }}/show" class="btn btn-primary">Lihat Buku</a>
             </div>
         </div>
     </div>

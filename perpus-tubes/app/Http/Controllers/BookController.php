@@ -112,7 +112,7 @@ class BookController extends Controller
 
 
         //send book_id which just created to BookAuthorController
-        return redirect()->route('admin.book.index')->with('success', 'Buku berhasil ditambahkan!');
+        return redirect()->route('admin.dashboard')->with('success', 'Buku berhasil ditambahkan!');
     }
 
     public function edit($id)
@@ -148,16 +148,16 @@ class BookController extends Controller
         $categories = $request->get('categories');
         $book->authors()->sync($authors);
         $book->categories()->sync($categories);
-        return redirect()->route('admin.book.index')->with('success', 'Buku berhasil diupdate!');
+        return redirect()->route('admin.dashboard')->with('success', 'Buku berhasil diupdate!');
     }
 
     public function destroy($id)
     {
         $book = Book::find($id);
-        $book->authors()->detach();
+        $book->author()->detach();
         $book->delete();
 
-        return redirect()->route('admin.book.index')->with('success', 'Buku berhasil dihapus!');
+        return redirect()->route('admin.dashboard')->with('success', 'Buku berhasil dihapus!');
     }
 
     public function show($id)
@@ -173,5 +173,27 @@ class BookController extends Controller
         $publisherName = Publisher::where('publisher_id', $book->publisher_id)->value('publisher_name');
 
         return view('admin.book.show', compact('book', 'authorName', 'categoryName', 'publisherName'));
+    }
+
+    public function homeshow($id)
+    {
+        $book = Book::findOrFail($id);
+
+        $authorId = BookAuthor::where('book_id', $book->book_id)->pluck('author_id');
+        $authorName = Author::whereIn('author_id', $authorId)->pluck('name');
+
+        $categoryId = BookCategory::where('book_id', $book->book_id)->pluck('category_id');
+        $categoryName = Category::whereIn('category_id', $categoryId)->pluck('category_name');
+
+        $publisherName = Publisher::where('publisher_id', $book->publisher_id)->value('publisher_name');
+
+        return view('show', compact('book', 'authorName', 'categoryName', 'publisherName'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $books = Book::where('title', 'like', '%' . $search . '%')->paginate(5);
+        return view('admin.book.index', compact('books'));
     }
 }
