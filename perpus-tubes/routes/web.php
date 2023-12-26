@@ -19,9 +19,7 @@ use App\Http\Controllers\BookController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [BookController::class, 'homeIndex'])->name('home');
 
 Route::get('/login', [loginController::class, 'index'])->name('login');
 Route::post('/login', [loginController::class, 'login']);
