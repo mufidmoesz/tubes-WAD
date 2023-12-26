@@ -66,7 +66,7 @@ class loginController extends Controller
                 // If user wants to be remembered, create a cookie
                 Cookie::queue('remember_user', encrypt(Auth::id()), 43200); // 30 days
             }
-            return redirect()->intended(route('dashboard'));
+            return redirect()->intended(route('admin.dashboard'));
         }
 
         // If unsuccessful, then redirect back to the login with the form data

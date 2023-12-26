@@ -48,6 +48,22 @@ class BookController extends Controller
         return view('home', compact(['books', 'authorIds', 'authors', 'categoryIds', 'categories']));
     }
 
+    public function dashboardIndex()
+    {
+        $books = Book::all();
+
+        foreach($books as $book) {
+            $bookIds[] = $book->book_id;
+
+        }
+        $authorIds = BookAuthor::whereIn('book_id', $bookIds)->get();
+        $authors = Author::all();
+
+        $categoryIds = BookCategory::whereIn('book_id', $bookIds)->get();
+        $categories = Category::all();
+        return view('admin.dashboard', compact(['books', 'authorIds', 'authors', 'categoryIds', 'categories']));
+    }
+
     public function create()
     {
         $authors = Author::all();
