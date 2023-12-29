@@ -80,6 +80,6 @@ class loginController extends Controller
         // Forget the cookie
         Cookie::queue(Cookie::forget('remember_user'));
 
-        return redirect('/login');
+        return redirect('/');
     }
 }

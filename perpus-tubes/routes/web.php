@@ -20,6 +20,12 @@ use App\Http\Controllers\BookController;
 */
 
 Route::get('/', [BookController::class, 'homeIndex'])->name('home');
+Route::get('/contact', function() {
+    return view('contact');
+});
+Route::get('/about', function() {
+    return view('about');
+});
 
 Route::get('/login', [loginController::class, 'index'])->name('login');
 Route::post('/login', [loginController::class, 'login']);

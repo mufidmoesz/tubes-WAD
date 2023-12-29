@@ -6,10 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Perpustakaan</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  {{-- load css file --}}
   <style>
-    .card {max-width: 30rem; width: 100%;};
-    /* .position {min-height: 150vh;} */
+    .gradient-custom-2 {
+    /* fallback for old browsers */
+      background: #000000;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ADA7A7);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ADA7A7);
+    }
+
+    @media (min-width: 700px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 700px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+    }
+    }
+    .card {
+    background-color: #ADA7A7; /* Replace with your desired color */
+}
   </style>
 </head>
 
