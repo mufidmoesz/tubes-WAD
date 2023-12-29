@@ -23,11 +23,14 @@
     <h2>Books</h2>
     <div class="row">
     @foreach($books as $book)
-    <div class="col-md-3 mt-4">
+    <div class="col-md-3 mb-4">
         <div class="card mt-3" style="width: 15rem;">
             <img src="/img/{{ $book->cover }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ $book->title }}</h5>
+            </div>
+            <div class="overflow-auto">
+                <p class="card-text">{{ $book->description }}</p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Author :
@@ -60,7 +63,7 @@
                     {{ implode(', ', $categoryNames) }}
                 </li>
             </ul>
-            <div class="card-body2">
+            <div class="card-body2 mb-3">
                 <a href="/book/{{ $book->book_id }}/show" class="btn btn-primary">Lihat Buku</a>
             </div>
         </div>
