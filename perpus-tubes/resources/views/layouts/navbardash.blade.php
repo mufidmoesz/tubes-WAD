@@ -1,36 +1,38 @@
-<div>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container">
-        <a class="navbar-brand" href="/dashboard">Perpus-Management</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb- mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/admin/book/create">Add Book</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/admin/author/create">Add Author</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      More Menu
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="/admin/category/create">Add Category</a></li>
-                      <li><a class="dropdown-item" href="/admin/publisher/create">Add Publisher</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-                </li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-md bg-dark fixed-top border-bottom border-body" data-bs-theme="dark">
+  <div class="container-xxl d-flex justify-content-between mb-1">
+    <a class="navbar-brand " href="/dashboard">
+      <span class="fw-bold text-light">
+        <i class="bi bi-book"></i>
+        Perpustakaan
+      </span>
+    </a>
+    <a class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+      href="#navbarScroll" role="button" aria-controls="navbarScroll" aria-expanded="false" 
+      >
+      <span class="navbar-toggler-icon"></span>
+    </a>
+    <div class="navbar-collapse flex-grow-0" id="navbarScroll">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="rounded-md hover-bg-black nav-link text-light" href="/admin/category/create">Category</a>
+        </li>
+        <li class="nav-item">
+          <a class="rounded-md hover-bg-black nav-link text-light" href="/admin/book/create">Book</a>
+        </li>
+        <li class="nav-item">
+          <a class="rounded-md hover-bg-black nav-link text-light" href="/admin/publisher/create">Publisher</a>
+        </li>
+        <li class="nav-item">
+          <a class="rounded-md hover-bg-black nav-link text-light" href="/admin/author/create">Author</a>
+        </li>
+      </ul>
+    </div>  
+    <div class="navbar-collapse flex-grow-0" id="navbarScroll">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="rounded-md hover-bg-black nav-link text-light " href="\logout">Log Out</a>
+        </li>
+      </ul>
     </div>
-    </nav>
-</div>
+  </div>
+</nav>

@@ -10,7 +10,7 @@
         object-fit: cover;
     }
 </style>
-<div class="container mt-4 shadow">
+<div class="container  mt-custom-5 shadow ">
     <div class="row">
         <div class="col-md-6 mt-4 mb-4">
             <img src="/img/{{ $book->cover }}" class="rounded mx-auto d-block" alt="..." height="500px" width="325px">

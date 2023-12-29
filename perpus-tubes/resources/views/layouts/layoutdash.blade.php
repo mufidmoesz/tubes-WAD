@@ -7,19 +7,35 @@
   <title>Perpustakaan</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  {{-- load css file --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <style>
-    .d-flex {
-    width: 5000px; /* or any specific width you prefer */
-    }
-    .custom-container {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-    .custom-navbar {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
+    .custom-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            padding-top: 15vh; /* Adjust this value to control the vertical positioning */
+        }
+        .custom-home {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 9vh; /* Adjust this value to control the vertical positioning */
+        }
+        .mt-custom-5 {
+        margin-top: 80px;}
+
+        .mt-custom-6 {
+        margin-top: 100px;}
+      
+      .mx-custom {
+        margin-right: 300px; /* Custom right margin */
+        margin-left: 300px;  /* Custom left margin */}
+        .gradient-custom-2 {
+    /* fallback for old browsers */
+      background: green;}
+        
   </style>
   @vite('resources/css/app.css')
 </head>

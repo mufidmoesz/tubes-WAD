@@ -1,7 +1,8 @@
 @extends('layouts.layoutdash')
 
 @section('content')
-<div class="container">
+<div class="container mt-custom-6">
+    <h1>Tambah Buku</h1>
     <form action="{{ route('admin.book.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -51,7 +52,7 @@
             <label for="isbn" class="form-label">ISBN</label>
             <input type="text" class="form-control" id="isbn" name="isbn" placeholder="Masukkan ISBN">
         </div>
-        <button type="submit" class="btn btn-primary">Tambah Buku</button>
+        <button type="submit" class="btn btn-primary mb-3">Tambah Buku</button>
     </form>
 </div>
 @endsection

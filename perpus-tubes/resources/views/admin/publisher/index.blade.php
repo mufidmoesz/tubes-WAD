@@ -1,9 +1,12 @@
 @extends('layouts.layoutdash')
 
 @section('content')
-<div class="container">
+<div class="container-xxl custom-home mt-2">
     <h2>Publishers</h2>
-    <table class="table table-bordered shadow">
+    <div style="text-align: right; margin-top: 10px;">
+        <a href="/admin/publisher/create" class="btn btn-success mb-2">Add Category</a>
+    </div>
+    <table class="table">
         <thead>
             <tr>
                 <th>#</th>

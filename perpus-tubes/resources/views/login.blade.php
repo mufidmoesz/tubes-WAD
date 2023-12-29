@@ -5,13 +5,19 @@
   <div class="container-xxl py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-10">
-        <div class="card rounded-3 text-cblak">
+        <div class="shadow rounded-3 text-cblak">
+          <!-- Back Button -->
+          
           <div class="row g-0">
             <div class="col-lg-6">
               <div class="card card-body p-md-3 md-3">
-
+              <a href="/" class="btn  position-absolute top-0 start-0 m-3">
+              <span class="fw-bold text-dark">
+              <i class="bi bi-box-arrow-left"></i>
+              </span>
+              </a>
                 <div class="text-center">
-                  <img src="\img\LoginLogo.png"
+                  <img src="\asset\LoginLogo.png"
                     style="width: 150px;" alt="logo">
                   <h4 class=" mb-5 pb-2">Admin Log In</h4>
                 </div>

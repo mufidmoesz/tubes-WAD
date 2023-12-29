@@ -1,7 +1,7 @@
 @extends('layouts.layoutdash')
 
 @section('content')
-<div class="container">
+<div class="container mt-custom-5">
     <h2>Add New Publisher</h2>
     <form action="/admin/publisher" method="POST">
         @csrf

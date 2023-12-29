@@ -1,14 +1,21 @@
 @extends('layouts.layoutdash')
-
+<style>
+    .table{
+        table-layout: auto;
+    }
+</style>
 @section('content')
-<div class="container">
+<div class="container-xxl custom-home mt-3">
     <h2>Categories</h2>
-    <table class="table table-bordered shadow">
+    <div style="text-align: right; margin-top: 10px;">
+        <a href="" class="btn btn-success mb-1">Add Category</a>
+    </div>
+    <table class="table ">
         <thead>
             <tr>
-                <th>ID</th>
+                <th style="width: 100px;">ID</th>
                 <th>Category Name</th>
-                <th>Action</th>
+                <th style="width: 150px;">Action</th> <!-- Set the width here -->
             </tr>
         </thead>
         <tbody>
@@ -17,11 +24,10 @@
             @endphp
             @foreach ($categories as $category)
                 <tr>
-                    <td>{{$no++}}</td>
+                    <td style="width: 100px;">{{ $no++ }}</td>
                     <td>{{ $category->category_name }}</td>
-                    <td>
-                        <a href="" class="btn btn-warning btn-sm">Update</a>
-                        {{-- <a href="/admin/category/{{ $category->category_id }}" class="btn btn-danger btn-sm" onclick="alert('Are you sure?')">Delete</a> --}}
+                    <td style="width: 150px;"> <!-- Set the width here for each row -->
+                        <a href="/admin/category/{{$category->category_id}}/edit" class="btn btn-warning btn-sm">Update</a>
                         <form action="/admin/category/{{ $category->category_id }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
@@ -32,10 +38,5 @@
             @endforeach
         </tbody>
     </table>
-
-    <!-- Add New Category Button -->
-    <div style="text-align: left; margin-top: 10px;">
-        <a href="" class="btn btn-success">Add New Category</a>
-    </div>
 </div>
 @endsection

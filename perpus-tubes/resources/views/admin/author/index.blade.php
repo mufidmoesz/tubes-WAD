@@ -1,9 +1,12 @@
 @extends('layouts.layoutdash')
 
 @section('content')
-<div class="container">
+<div class="container-xxl custom-home mt-3">
     <h2>Authors</h2>
-    <table class="table table-bordered shadow">
+    <div style="text-align: right; margin-top: 10px;">
+        <a href="/admin/author/create" class="btn btn-success mb-2">Add Author</a>
+    </div>
+    <table class="table ">
         <thead>
             <tr>
                 <th>#</th>
@@ -34,8 +37,6 @@
     </table>
 
     <!-- Add New Author Button -->
-    <div style="text-align: left; margin-top: 10px;">
-        <a href="/admin/author/create" class="btn btn-success">Add New Author</a>
-    </div>
+
 </div>
 @endsection
