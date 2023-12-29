@@ -50,7 +50,7 @@
                             {{ implode(', ', $categoryNames) }}
                         </td>
                         <td>
-                            <a href="/admin/book/{{ $book->book_id }}" class="btn btn-primary">Detail</a>
+                            <a href="/admin/book/{{ $book->book_id }}/show" class="btn btn-primary">Detail</a>
                             <a href="/admin/book/{{ $book->book_id }}/edit" class="btn btn-warning">Edit</a>
                             <form action="/admin/book/{{ $book->book_id }}" method="POST" class="d-inline">
                                 @method('delete')

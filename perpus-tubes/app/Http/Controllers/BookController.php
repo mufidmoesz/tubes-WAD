@@ -118,7 +118,10 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::find($id);
-        return view('admin.book.edit', compact('book'));
+        $authors = Author::all();
+        $categories = Category::all();
+        $publishers = Publisher::all();
+        return view('admin.book.edit', compact('book', 'authors', 'categories', 'publishers'));
     }
 
     public function update(Request $request, $id)
@@ -146,8 +149,8 @@ class BookController extends Controller
 
         $authors = $request->get('authors');
         $categories = $request->get('categories');
-        $book->authors()->sync($authors);
-        $book->categories()->sync($categories);
+        $book->author()->sync($authors);
+        $book->category()->sync($categories);
         return redirect()->route('admin.dashboard')->with('success', 'Buku berhasil diupdate!');
     }
 
