@@ -1,5 +1,5 @@
 @extends('layouts.layouthome')
-
+@extends('layouts.navbarhome')
 @section('content')
 <style>
     .figure {
@@ -10,9 +10,9 @@
         object-fit: cover;
     }
 </style>
-<div class="container mt-4 shadow">
+<div class="custom-center container mt-6 shadow">
     <div class="row">
-        <div class="col-md-6 mt-4 mb-4">
+        <div class="col-md-6 mt- mb-4">
             <img src="/img/{{ $book->cover }}" class="rounded mx-auto d-block" alt="..." height="500px" width="325px">
         </div>
         <div class="col-md-6">

@@ -1,36 +1,33 @@
-<div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md bg-dark fixed-top border-bottom border-body" data-bs-theme="dark">
+  <div class="container-xxl d-flex justify-content-between mb-1">
+    <a class="navbar-brand " href="#">
+      <span class="fw-bold text-light">
+        <i class="bi bi-book"></i>
+        Perpustakaan
+      </span>
+    </a>
+    <a class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+      href="#navbarScroll" role="button" aria-controls="navbarScroll" aria-expanded="false" 
+      >
       <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <!-- Left-aligned items -->
-      <ul class="navbar-nav me-auto">
+    </a>
+    <div class="navbar-collapse flex-grow-0" id="navbarScroll">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Contact</a>
+          <a class="rounded-md hover-bg-black nav-link text-light" href="/">Home</a>
         </li>
-        <li class="nav-item me-3">
-          <a class="nav-link" href="#">About</a>
+        <li class="nav-item">
+          <a class="rounded-md hover-bg-black nav-link text-light" href="/about">About</a>
         </li>
-        <li>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2 long-search-bar" type="search" placeholder="Search" aria-label="Search">
-          </form>
+        <li class="nav-item">
+          <a class="rounded-md hover-bg-black nav-link text-light" href="/contact">Contact</a>
         </li>
       </ul>
-
-      <!-- Center-aligned search bar -->
-      <ul class="navbar-nav mx-auto">
-      </ul>
-
-
-
-      <!-- Right-aligned items -->
-      <ul class="navbar-nav ms-auto">
+    </div>  
+    <div class="navbar-collapse flex-grow-0" id="navbarScroll">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
+          <a class="rounded-md hover-bg-black nav-link text-light " href="\login">Log in</a>
         </li>
       </ul>
     </div>
