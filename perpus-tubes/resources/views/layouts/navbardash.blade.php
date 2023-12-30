@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-md bg-dark fixed-top border-bottom border-body" data-bs-theme="dark">
   <div class="container-xxl d-flex justify-content-between mb-1">
-    <a class="navbar-brand " href="/dashboard">
+    <a class="navbar-brand " href="/admin/dashboard">
       <span class="fw-bold text-light">
         <i class="bi bi-book"></i>
         Perpustakaan
       </span>
     </a>
-    <a class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-      href="#navbarScroll" role="button" aria-controls="navbarScroll" aria-expanded="false" 
+    <a class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      href="#navbarScroll" role="button" aria-controls="navbarScroll" aria-expanded="false"
       >
       <span class="navbar-toggler-icon"></span>
     </a>
@@ -26,7 +26,7 @@
           <a class="rounded-md hover-bg-black nav-link text-light" href="/admin/author/create">Author</a>
         </li>
       </ul>
-    </div>  
+    </div>
     <div class="navbar-collapse flex-grow-0" id="navbarScroll">
       <ul class="navbar-nav">
         <li class="nav-item">

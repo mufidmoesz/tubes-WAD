@@ -100,6 +100,11 @@ class CategorySeeder extends Seeder
                 'category_name' => 'Cooking',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
+            ],
+            [
+                'category_name' => 'Novel',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]
         ];
 

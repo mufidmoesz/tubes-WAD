@@ -45,6 +45,36 @@ class BookSeeder extends Seeder
                 'publisher_id' => 1,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
+            ],
+            [
+                'title' => 'Sebuah Seni Untuk Bersikap Bodo Amat',
+                'year_released' => '2016',
+                'description' => 'Novel yang berjudul Sebuah Seni Untuk Bersikap Bodo Amat bercerita tentang seseorang yang bernama Charles Bukowski yang mempunyai masa lalu yang kelam, suka mabuk-mabukan, berjudi, mempermainkan wanita, kasar, tukang utang dan seorang penyair. Dia bercita-cita menjadi seorang penulis terkenal namun karya-karyanya selalu ditolak oleh hampir disetiap majalah, jurnal-jurnal, surat kabar dan penerbit lainnya. Semua penerbit tersebut tidak mau menerbitkan karyanya dengan alasan tulisannya yang kasar, menjijikkan dan tidak bermoral.',
+                'cover' => '39da0eb1-0087-4226-9413-d287a55b8a72.jpg',
+                'isbn' => '978-0-06-245771-4',
+                'publisher_id' => 5,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'title' => 'Speaker For The Dead',
+                'year_released' => '1986',
+                'description' => 'In "Speaker for the Dead", Ender is now an adult and has become a xenobiologist, studying alien life forms. He is sent to the planet Lusitania to investigate the death of the planet\'s human colony. Ender discovers that the colony was destroyed by a sentient alien species called the pequeninos, who are capable of communicating with humans through a form of telepathy.',
+                'cover' => 'ff14c22f-d5d7-42b9-9dbb-4670a0a8cbf4.jpg',
+                'isbn' => '978-0-312-93208-1',
+                'publisher_id' => 6,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'title' => 'Going Postal',
+                'year_released' => '2004',
+                'description' => '"Going Postal" is a fantasy novel by the renowned author Terry Pratchett, published in 2004. It is the 33rd book in the "Discworld" series and the 26th novel to feature the character Moist von Lipwig. The story takes place in the fictional city of Ankh-Morpork, where Moist von Lipwig, a con artist and former conman, is sentenced to death for his crimes. However, he is given a chance to redeem himself by taking over the failing postal service of the city.',
+                'cover' => '86acaaef-b80d-497b-a840-60ccfc867d5e.jpg',
+                'isbn' => '978-0-061-13937-6',
+                'publisher_id' => 4,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]
         ];
 

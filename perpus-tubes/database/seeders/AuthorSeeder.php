@@ -71,6 +71,13 @@ class AuthorSeeder extends Seeder
                 'about_author' => 'Douglas Noel Adams was an English author, screenwriter, essayist, humorist, satirist and dramatist. Adams was author of The Hitchhiker\'s Guide to the Galaxy, which originated in 1978 as a BBC radio comedy before developing into a "trilogy" of five books that sold more than 5000',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
+            ],
+            [
+                'name' => 'Mark Manson',
+                'birth_date' => '1964-01-10',
+                'about_author' => 'Mark Manson is an American self-help author, blogger and entrepreneur. He is the author of the website MarkManson.net and two books, The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life, and Everything Is F*cked: A Book About Hope.',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]
         ];
 

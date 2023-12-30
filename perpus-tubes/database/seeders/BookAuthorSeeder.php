@@ -39,7 +39,25 @@ class BookAuthorSeeder extends Seeder
                 'author_id' => 4,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
-            ]
+            ],
+            [
+                'book_id' => 4,
+                'author_id' => 9,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'book_id' => 5,
+                'author_id' => 5,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
+            [
+                'book_id' => 6,
+                'author_id' => 7,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ];
 
         DB::table('book_authors')->insert($bookAuthors);
