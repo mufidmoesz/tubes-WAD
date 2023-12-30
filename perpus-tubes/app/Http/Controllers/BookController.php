@@ -139,6 +139,20 @@ class BookController extends Controller
         ]);
 
         $book = Book::find($id);
+        if (request()->hasFile('cover') && request('cover') != '') {
+            // $imagePath = public_path('storage/'.$post->image);
+            $cover = $request->file('cover');
+
+            $coverName = Str::uuid()->toString() . '.' . $cover->extension();
+
+            $cover->move(public_path('img'), $coverName);
+
+            $book->update([
+                'cover' => $coverName
+            ]);
+
+        }
+
         $book->update([
             'title' => $request->title,
             'year_released' => $request->year_released,
