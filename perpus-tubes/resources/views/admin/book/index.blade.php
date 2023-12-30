@@ -6,13 +6,13 @@
     <div style="text-align: right; margin-top: 10px;">
         <a href="/admin/book/create" class="btn btn-dark gradient-custom-2 mb-2"><i class="bi bi-plus-lg"></i></a>
     </div>
-            <table class="table table-bordered shadow">
+            <table class="table table-bordered shadow mb-4">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Title</th>
+                        <th style="width: 180px;">Title</th>
                         <th>Author</th>
-                        <th>Description</th>
+                        <th style="width: 500px;">Description</th>
                         <th>Category</th>
                         <th>Action</th>
                     </tr>

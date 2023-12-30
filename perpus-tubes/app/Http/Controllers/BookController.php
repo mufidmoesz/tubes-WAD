@@ -165,7 +165,7 @@ class BookController extends Controller
         $categories = $request->get('categories');
         $book->author()->sync($authors);
         $book->category()->sync($categories);
-        return redirect()->route('admin.dashboard')->with('success', 'Buku berhasil diupdate!');
+        return redirect()->route('admin.book.index')->with('success', 'Buku berhasil diupdate!');
     }
 
     public function destroy($id)
@@ -174,7 +174,7 @@ class BookController extends Controller
         $book->author()->detach();
         $book->delete();
 
-        return redirect()->route('admin.dashboard')->with('success', 'Buku berhasil dihapus!');
+        return redirect()->route('admin.book.index')->with('success', 'Buku berhasil dihapus!');
     }
 
     public function show($id)

@@ -5,15 +5,15 @@
     }
 </style>
 @section('content')
-<div class="container-xxl custom-home mt-3">
+<div class="container-xxl custom-home mt-4">
     <h2>Categories</h2>
     <div style="text-align: right; margin-top: 10px;">
-        <a href="" class="btn btn-success mb-1">Add Category</a>
+        <a href="/admin/category/create" class="btn btn-dark gradient-custom-2 mb-2"><i class="bi bi-plus-lg"></i></a>
     </div>
-    <table class="table ">
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th style="width: 100px;">ID</th>
+                <th style="width: 100px;">NO</th>
                 <th>Category Name</th>
                 <th style="width: 150px;">Action</th> <!-- Set the width here -->
             </tr>

@@ -28,14 +28,14 @@
 
         .mt-custom-6 {
         margin-top: 100px;}
-      
+
       .mx-custom {
         margin-right: 300px; /* Custom right margin */
         margin-left: 300px;  /* Custom left margin */}
         .gradient-custom-2 {
     /* fallback for old browsers */
       background: green;}
-        
+
   </style>
   @vite('resources/css/app.css')
 </head>

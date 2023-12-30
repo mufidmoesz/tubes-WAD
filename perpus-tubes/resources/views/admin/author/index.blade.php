@@ -4,9 +4,9 @@
 <div class="container-xxl custom-home mt-3">
     <h2>Authors</h2>
     <div style="text-align: right; margin-top: 10px;">
-        <a href="/admin/author/create" class="btn btn-success mb-2">Add Author</a>
+        <a href="/admin/author/create" class="btn btn-dark gradient-custom-2 mb-2"><i class="bi bi-plus-lg"></i></a>
     </div>
-    <table class="table ">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>#</th>
