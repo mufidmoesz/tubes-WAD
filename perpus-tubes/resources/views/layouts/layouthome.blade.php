@@ -25,11 +25,13 @@
             justify-content: flex-start;
             padding-top: 5vh; /* Adjust this value to control the vertical positioning */
         }
+        .mt-custom-5 {
+        margin-top: 80px;}
     </style>
 </head>
 
 <body>
-  
+
   @yield('content')
 
 </body>
