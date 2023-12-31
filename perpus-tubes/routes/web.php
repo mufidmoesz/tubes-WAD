@@ -34,7 +34,9 @@ Route::get('/logout', [loginController::class, 'logout'])->name('logout');
 Route::get('/book/{id}/show', [BookController::class, 'homeshow'])->name('show');
 // Route Group untuk mengamankan route yang perlu diproteksi dengan login
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/admin/dashboard', [BookController::class, 'dashboardIndex'])->name('admin.dashboard');
+    Route::get('/admin/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
     //crud author
     Route::get('/admin/author', [AuthorController::class, 'index'])->name('admin.author.index');
     Route::get('/admin/author/create', [AuthorController::class, 'create'])->name('admin.author.create');

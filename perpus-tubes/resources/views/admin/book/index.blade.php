@@ -12,9 +12,9 @@
                         <th>#</th>
                         <th style="width: 180px;">Title</th>
                         <th>Author</th>
-                        <th style="width: 500px;">Description</th>
+                        <th style="width: 600px;">Description</th>
                         <th>Category</th>
-                        <th>Action</th>
+                        <th style="width: 120px;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,7 +52,7 @@
                             @endforeach
                             {{ implode(', ', $categoryNames) }}
                         </td>
-                        <td>
+                        <td class="mx-auto">
                             <a href="/admin/book/{{ $book->book_id }}/show" class="btn btn-primary mb-1">Detail</a>
                             <a href="/admin/book/{{ $book->book_id }}/edit" class="btn btn-warning mb-1">Edit</a>
                             <form action="/admin/book/{{ $book->book_id }}" method="POST" class="d-inline">

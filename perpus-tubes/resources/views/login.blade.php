@@ -1,4 +1,5 @@
 @extends('layouts.loginlayout')
+@extends('layouts.navbarhome')
 
 @section('content')
 <section class="h-100 gradient-form" style="background-color: #ffffff;">

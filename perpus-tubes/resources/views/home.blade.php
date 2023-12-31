@@ -31,8 +31,8 @@
                 <div class="card-body">
                 <h5 class="card-title">{{ $book->title }}</h5>
                 </div>
-                <div class="overflow-auto">
-                    <p class="card-text">{{ $book->description }}</p>
+                <div class="overflow-auto ">
+                    <p class="mcard-text">{{ $book->description }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Author :
