@@ -7,7 +7,7 @@
       <div class="col-xl-10">
         <div class="shadow rounded-3 text-cblak">
           <!-- Back Button -->
-          
+
           <div class="row g-0">
             <div class="col-lg-6">
               <div class="card card-body p-md-3 md-3">
@@ -53,10 +53,10 @@
             </div>
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h4 class="mb-4">We are The Avengers</h4>
-                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h4 class="mb-4">Library Management System</h4>
+                <p class="small mb-0">LMS adalah aplikasi berbasis web yang efisien untuk
+                    pengelolaan perpustakaan dengan berbagai manfaat, baik untuk pengelola perpustakaan maupun
+                    End User. </p>
               </div>
             </div>
           </div>
