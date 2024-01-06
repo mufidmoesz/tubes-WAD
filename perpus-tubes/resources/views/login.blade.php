@@ -3,15 +3,15 @@
 
 @section('content')
 <section class="h-100 gradient-form" style="background-color: #ffffff;">
-  <div class="container-xxl py-5 h-100">
+  <div class="container-xxl py-5 h-100 mt-custom-5">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-10">
-        <div class="shadow rounded-3 text-cblak">
+        <div class="shadow rounded-3 text-cblak mt-custom-5">
           <!-- Back Button -->
 
           <div class="row g-0">
             <div class="col-lg-6">
-              <div class="card card-body p-md-3 md-3">
+              <div class="card card-body p-md-3 md-3 mt-custom-5">
               <a href="/" class="btn  position-absolute top-0 start-0 m-3">
               <span class="fw-bold text-dark">
               <i class="bi bi-box-arrow-left"></i>
@@ -29,11 +29,21 @@
                     <input type="email" id="email" name="email" class="form-control"
                       placeholder="Email address" />
                     <label class="form-label" for="email">Email Address</label>
+                    @if($errors->has('email'))
+                        <div class="alert alert-danger">
+                            {{ $errors->first('email') }}
+                        </div>
+                    @endif
                   </div>
 
                     <div class="form-outline mx-3">
                         <input type="password" id="password" name="password" class="form-control" />
                         <label class="form-label" for="password">Password</label>
+                        @if($errors->has('password'))
+                            <div class="alert alert-danger">
+                                {{ $errors->first('password') }}
+                            </div>
+                        @endif
                     </div>
 
                     <div class="form-check mb-5 mx-3">
